@@ -1,9 +1,24 @@
+import 'package:fl_app_tigo/providers/theme_provider.dart';
+import 'package:fl_app_tigo/share_preferences/preferences.dart';
 import 'package:flutter/material.dart';
 
 import 'package:fl_app_tigo/router/app_routes.dart';
+import 'package:provider/provider.dart';
 import 'themes/app_theme.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Preferences.init();
+
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+          create: (_) => ThemeProvider(isDarkmode: Preferences.isDarkmode))
+    ],
+    child: const MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -15,7 +30,6 @@ class MyApp extends StatelessWidget {
         title: 'Tigo',
         initialRoute: AppRoutes.initialRoute,
         routes: AppRoutes.getAppRoutes(),
-        onGenerateRoute: AppRoutes.onGenerateRoute,
-        theme: Apptheme.lighTheme);
+        theme: Provider.of<ThemeProvider>(context).currentTheme);
   }
 }

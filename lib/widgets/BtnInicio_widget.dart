@@ -30,7 +30,10 @@ class botonesInicio extends StatelessWidget {
                   const Text('gestiona todos'),
                   const Text('tus servicios'),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => LoginScreen()));
+                      },
                       child: const Text(
                         'Ingresar',
                         style: TextStyle(fontSize: 16, color: Colors.black),
@@ -62,23 +65,26 @@ class botonesInicio extends StatelessWidget {
             )
           ],
         ),
-        RichText(
-            text: TextSpan(children: [
-          const TextSpan(
-              style: TextStyle(fontSize: 14, color: Colors.black),
-              text: "no tienes cuenta"),
-          TextSpan(
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  color: Colors.black),
-              text: "registrate",
-              recognizer: TapGestureRecognizer()
-                ..onTap = () async {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const AlertScreen()));
-                })
-        ])),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+          child: RichText(
+              text: TextSpan(children: [
+            const TextSpan(
+                style: TextStyle(fontSize: 14, color: Colors.black),
+                text: "no tienes cuenta  "),
+            TextSpan(
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: Colors.black),
+                text: "  registrate",
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () async {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const AlertScreen()));
+                  })
+          ])),
+        ),
       ],
     );
   }
