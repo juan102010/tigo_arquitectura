@@ -32,7 +32,7 @@ class botonesInicio extends StatelessWidget {
                   ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => LoginScreen()));
+                            builder: (context) => const CheckAuthScreen2()));
                       },
                       child: const Text(
                         'Ingresar',
@@ -81,7 +81,7 @@ class botonesInicio extends StatelessWidget {
                 recognizer: TapGestureRecognizer()
                   ..onTap = () async {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const AlertScreen()));
+                        builder: (context) => const LoginScreen()));
                   })
           ])),
         ),

@@ -1,11 +1,16 @@
 import 'package:fl_app_tigo/screens/screns.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../services/services.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthService>(context, listen: false);
+
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -15,7 +20,17 @@ class SideMenu extends StatelessWidget {
             leading: const Icon(Icons.pages_outlined),
             title: const Text('Home'),
             onTap: () {
-              Navigator.pushReplacementNamed(context, InitialRoute.routerName);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const InitialRoute()));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.login_outlined),
+            title: const Text('exit'),
+            onTap: () {
+              authService.logout();
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const HomeScreen()));
             },
           ),
           ListTile(
@@ -23,8 +38,8 @@ class SideMenu extends StatelessWidget {
             title: const Text('Settings'),
             onTap: () {
               // Navigator.pop(context);
-              Navigator.pushReplacementNamed(
-                  context, SettingsScreen.routerName);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SettingsScreen()));
             },
           ),
         ],

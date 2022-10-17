@@ -50,24 +50,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       setState(() {});
                     }),
                 const Divider(),
-                RadioListTile<int>(
-                    value: 1,
-                    groupValue: Preferences.gender,
-                    title: const Text('Masculino'),
-                    onChanged: (value) {
-                      Preferences.gender = value ?? 1;
-                      setState(() {});
-                    }),
-                const Divider(),
-                RadioListTile<int>(
-                    value: 2,
-                    groupValue: Preferences.gender,
-                    title: const Text('Femenino'),
-                    onChanged: (value) {
-                      Preferences.gender = value ?? 2;
-                      setState(() {});
-                    }),
-                const Divider(),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextFormField(

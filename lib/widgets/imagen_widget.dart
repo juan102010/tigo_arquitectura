@@ -10,7 +10,7 @@ class imagen_logo extends StatelessWidget {
     return Container(
       height: double.infinity,
       alignment: Alignment.topCenter,
-      color: Color(0xff06377c),
+      color: const Color(0xff06377c),
       child: const Image(
         image: AssetImage('assets/logo.png'),
       ),

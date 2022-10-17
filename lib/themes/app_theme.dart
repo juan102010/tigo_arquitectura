@@ -20,7 +20,7 @@ class Apptheme {
       //ElevatedButton
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.black,
               primary: Colors.black,
               shape: const StadiumBorder(),
               elevation: 0)),

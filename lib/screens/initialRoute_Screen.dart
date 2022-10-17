@@ -19,8 +19,6 @@ class InitialRoute extends StatelessWidget {
           children: [
             Text('isDarkmode: ${Preferences.isDarkmode}'),
             const Divider(),
-            Text('Género: ${Preferences.gender}'),
-            const Divider(),
             Text('Nombre de usuario: ${Preferences.name} '),
             const Divider(),
           ],

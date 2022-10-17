@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:fl_app_tigo/router/app_routes.dart';
 import 'package:provider/provider.dart';
-import 'themes/app_theme.dart';
+import 'services/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +13,7 @@ void main() async {
 
   runApp(MultiProvider(
     providers: [
+      ChangeNotifierProvider(create: (_) => AuthService()),
       ChangeNotifierProvider(
           create: (_) => ThemeProvider(isDarkmode: Preferences.isDarkmode))
     ],
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         title: 'Tigo',
         initialRoute: AppRoutes.initialRoute,
         routes: AppRoutes.getAppRoutes(),
+        scaffoldMessengerKey: NotificationsService.messengerKey,
         theme: Provider.of<ThemeProvider>(context).currentTheme);
   }
 }
