@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../screens/screns.dart';
 
@@ -7,6 +8,14 @@ class botonesInicio extends StatelessWidget {
   const botonesInicio({
     Key? key,
   }) : super(key: key);
+
+  Future<void> _launchUrl() async {
+    final Uri _url = Uri.parse(
+        'https://compras.tigo.com.co/movil/pospago?_ga=2.62367215.2122873429.1667166981-1963608461.1662313605&_gac=1.121426426.1663896518.Cj0KCQjwj7CZBhDHARIsAPPWv3fiUzYSXhVyn1EB_HbFI1h7LBXKXXgB87V9FI7EDX8hqrfPbjFXjSoaAvcoEALw_wcB');
+    if (!await launchUrl(_url)) {
+      throw 'Could not launch $_url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +64,9 @@ class botonesInicio extends StatelessWidget {
                   const Text('y nuevas'),
                   const Text('experencias'),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _launchUrl();
+                      },
                       child: const Text(
                         'Ingresar',
                         style: TextStyle(fontSize: 16, color: Colors.black),
