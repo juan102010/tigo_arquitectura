@@ -25,6 +25,14 @@ class SideMenu extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.room_service_outlined),
+            title: const Text('servicios'),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ServicesScreen()));
+            },
+          ),
+          ListTile(
             leading: const Icon(Icons.login_outlined),
             title: const Text('exit'),
             onTap: () {

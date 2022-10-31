@@ -112,7 +112,7 @@ class _BtnServices extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const LoginScreen()));
+                        builder: (context) => const ServicesScreen()));
                   },
                   child: const Text(
                     'Conoce mas sobre nuestros servicios',

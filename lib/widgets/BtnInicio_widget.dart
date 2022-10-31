@@ -92,7 +92,7 @@ class botonesInicio extends StatelessWidget {
                 recognizer: TapGestureRecognizer()
                   ..onTap = () async {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const LoginScreen()));
+                        builder: (context) => const RegisterScreen()));
                   })
           ])),
         ),
