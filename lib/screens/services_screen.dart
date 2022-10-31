@@ -116,8 +116,7 @@ class ServicesScreen extends StatelessWidget {
                       ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    const DatosMovilesScreen()));
+                                builder: (context) => DatosMovilesScreen()));
                           },
                           child: const Text(
                             'Ingresar',
