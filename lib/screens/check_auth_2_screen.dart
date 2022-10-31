@@ -31,7 +31,7 @@ class CheckAuthScreen2 extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => const SettingsScreen(),
+                        pageBuilder: (_, __, ___) => InitialRoute(),
                         transitionDuration: const Duration(seconds: 0)));
               });
             }

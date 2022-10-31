@@ -119,7 +119,7 @@ class _LoginForm extends StatelessWidget {
 
                         if (errorMessage == null) {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const SettingsScreen()));
+                              builder: (context) => InitialRoute()));
                         } else {
                           //  mostrar error en pantalla
                           // print( errorMessage );

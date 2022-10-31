@@ -20,8 +20,8 @@ class SideMenu extends StatelessWidget {
             leading: const Icon(Icons.pages_outlined),
             title: const Text('Home'),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const InitialRoute()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => InitialRoute()));
             },
           ),
           ListTile(
