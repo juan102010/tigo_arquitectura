@@ -35,7 +35,7 @@ class ServicesScreen extends StatelessWidget {
                       ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const TelefoniaScreen()));
+                                builder: (context) => TelefoniaScreen()));
                           },
                           child: const Text(
                             'Ingresar',
@@ -60,7 +60,7 @@ class ServicesScreen extends StatelessWidget {
                       ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const InternetScreen()));
+                                builder: (context) => InternetScreen()));
                           },
                           child: const Text(
                             'Ingresar',
@@ -90,8 +90,7 @@ class ServicesScreen extends StatelessWidget {
                       ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    const TelevisionScreen()));
+                                builder: (context) => TelevisionScreen()));
                           },
                           child: const Text(
                             'Ingresar',
