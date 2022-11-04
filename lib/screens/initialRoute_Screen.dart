@@ -33,13 +33,15 @@ class InitialRoute extends StatelessWidget {
           title: const Text('HOME'),
         ),
         drawer: const SideMenu(),
-        body: Column(
-          children: [
-            _SwiperProm(imagenes: imagenes),
-            _btnProm(),
-            const _BtnServices(),
-            _btnwhatsapp(),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              _SwiperProm(imagenes: imagenes),
+              _btnProm(),
+              const _BtnServices(),
+              _btnwhatsapp(),
+            ],
+          ),
         ));
   }
 
